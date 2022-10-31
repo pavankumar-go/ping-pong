@@ -19,4 +19,5 @@ pipelines:
             # containerize the application using the jib plugin
             - mvn compile jib:dockerBuild -Dimage=pavankumar6/k8s-workshop:${BITBUCKET_BRANCH_SANITIZED}-${BITBUCKET_BUILD_NUMBER}
             # push the image to docker hub registry
+            - docker login -u pavankumar6 -p $DOCKER_HUB_PASSWORD
             - docker push pavankumar6/k8s-workshop:${BITBUCKET_BRANCH_SANITIZED}-${BITBUCKET_BUILD_NUMBER}
