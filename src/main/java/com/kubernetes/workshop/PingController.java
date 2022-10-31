@@ -15,7 +15,7 @@ public class PingController {
             if (pingExecTime != "") {
                 execTime = Long.parseLong(pingExecTime);
             }
-            
+
             Thread.sleep(execTime);
             return "pong";
         } catch (InterruptedException ex) {

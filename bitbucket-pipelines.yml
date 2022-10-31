@@ -1,0 +1,20 @@
+image: maven:3.8.6-eclipse-temurin-17
+options:
+  size: 2x
+  services:
+    docker:
+      memory: 4096
+
+pipelines:
+  custom:
+    build:
+      - step:
+          name: Build & Push to Docker hub
+          services:
+            - docker
+          caches:
+            - maven
+          script:
+            - export BITBUCKET_BRANCH_SANITIZED=$(echo $BITBUCKET_BRANCH | tr '/' '_')
+            # containerize the application using the jib plugin
+            - mvn compile jib:dockerBuild -Dimage=${BITBUCKET_BRANCH_SANITIZED}-${BITBUCKET_BUILD_NUMBER}
