@@ -17,4 +17,4 @@ kubectl create namespace demo
 ```
 ##### 3. create a kubernetes pod in the `demo` namespace which holds the container image that was built in bitbucket pipeline earlier
 ```
-kubectl run  myapp --image=<IMAGE_BUILT_ON_BITBUCKET>   
+kubectl run  myapp --image=<IMAGE_BUILT_ON_BITBUCKET>
