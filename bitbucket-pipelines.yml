@@ -18,3 +18,5 @@ pipelines:
             - export BITBUCKET_BRANCH_SANITIZED=$(echo $BITBUCKET_BRANCH | tr '/' '_')
             # containerize the application using the jib plugin
             - mvn compile jib:dockerBuild -Dimage=${BITBUCKET_BRANCH_SANITIZED}-${BITBUCKET_BUILD_NUMBER}
+            # push the image to docker hub registry
+            - docker push pavankumar6/k8s-workshop:${BITBUCKET_BRANCH_SANITIZED}-${BITBUCKET_BUILD_NUMBER}
