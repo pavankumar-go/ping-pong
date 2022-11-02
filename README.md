@@ -1,5 +1,13 @@
 # Getting Started
 
+
+### Testing Locally
+
+```
+$ mvn -Djibstep.skip=true -DskipTests clean install
+$ java -jar target/workshop-0.0.1-SNAPSHOT.jar
+```
+
 ### Adding a Bitbucket Pipeline
 ----
 ##### 1. Clone the repository and checkout to a **new** branch from `main`
