@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: springboot
+  name: k8s-workshop
+  namespace: apps
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springboot
+  template:
+    metadata:
+      labels:
+        app: springboot
+    spec:
+      containers:
+        - image: pavankumar6/k8s-workshop:main-7
+          name: springboot-app
+          ports:
+            - containerPort: 8080

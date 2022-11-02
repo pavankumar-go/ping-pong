@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: k8s-workshop
+  labels:
+    app: springboot
+spec:
+  containers:
+    - image: pavankumar6/k8s-workshop:main-7
+      name: myapp
+  nodeSelector:
+    nodesrole: ops
+  tolerations:
+  - key: noderole
+    value: ops
+    effect: NoSchedule
+    operator: Equal
