@@ -6,7 +6,7 @@ metadata:
   name: k8s-workshop
   namespace: apps
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: springboot
@@ -20,3 +20,4 @@ spec:
           name: springboot-app
           ports:
             - containerPort: 8080
+            - containerPort: 8081

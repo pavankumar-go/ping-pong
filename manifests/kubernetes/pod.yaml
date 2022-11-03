@@ -8,10 +8,3 @@ spec:
   containers:
     - image: pavankumar6/k8s-workshop:main-7
       name: myapp
-  nodeSelector:
-    nodesrole: ops
-  tolerations:
-  - key: noderole
-    value: ops
-    effect: NoSchedule
-    operator: Equal
