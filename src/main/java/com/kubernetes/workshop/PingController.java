@@ -43,6 +43,7 @@ public class PingController {
 
     @GetMapping("/color")
     public String getColor() {
+        System.out.println("Responding to /color ...");
         return System.getenv("COLOR");
     }
 }
